@@ -20,5 +20,13 @@ public class PlayerStats {
     public double getPoints() { return points; }
     public double getRebounds() { return rebounds; }
     public double getAssists() { return assists; }
+    public double getSteals() { return steals; }
+    public double getBlocks() { return blocks; }
+    public double getTurnovers() { return turnovers; }
+    public double getFgMade2() { return fg_made_2; }
+    public double getFgAttempt2() { return fg_attempt_2; }
+    public double getFgMade3() { return fg_made_3; }
+    public double getFgAttempt3() { return fg_attempt_3; }
+    public double getMinutes() { return minutes; }
     // add remaining getters/setters
 }

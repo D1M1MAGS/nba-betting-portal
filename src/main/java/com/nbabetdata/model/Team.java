@@ -12,4 +12,8 @@ public class Team {
     public int getId() { return id; }
     public String getAbbreviation() { return abbreviation; }
     public String getFullName() { return full_name; }
+    public String getCity() { return city; }
+    public String getConference() { return conference; }
+    public String getDivision() { return division; }
+    public String getName() { return name; }
 }

@@ -3,15 +3,12 @@ package com.nbabetdata.api;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.nbabetdata.model.Player;
-import com.nbabetdata.model.Team;
 import com.nbabetdata.db.DBConnection;
 
 import java.net.http.*;
 import java.net.URI;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class NBAApiFetcher {
 
