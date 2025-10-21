@@ -1,1 +1,13 @@
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\api\NBAApiFetcher.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\controller\PlayerController.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\controller\UIController.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\db\DBConnection.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\db\DBSetup.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\db\StatsCalculator.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\model\Game.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\model\Player.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\model\PlayerAverages.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\model\PlayerStats.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\model\Team.java
+C:\Dev\nba-betting-portal\src\main\java\com\nbabetdata\NbaPortalApplication.java
 C:\Dev\nba-betting-portal\src\main\java\com\nbaportal\Main.java

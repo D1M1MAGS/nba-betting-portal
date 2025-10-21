@@ -1,1 +1,13 @@
+com\nbabetdata\api\NBAApiFetcher.class
+com\nbabetdata\model\Player.class
+com\nbabetdata\model\PlayerStats.class
+com\nbabetdata\controller\PlayerController.class
 com\nbaportal\Main.class
+com\nbabetdata\NbaPortalApplication.class
+com\nbabetdata\controller\UIController.class
+com\nbabetdata\model\Team.class
+com\nbabetdata\model\PlayerAverages.class
+com\nbabetdata\db\DBConnection.class
+com\nbabetdata\model\Game.class
+com\nbabetdata\db\DBSetup.class
+com\nbabetdata\db\StatsCalculator.class

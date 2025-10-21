@@ -6,8 +6,11 @@ public class PlayerAverages {
     private String name;
     private String team;
     private String position;
+    private double heightFeet;
+    private double heightInches;
     private double heightCm;
     private double weightKg;
+    private double weight_pounds;
     private int age;
 
     // Player per-game averages
@@ -99,4 +102,13 @@ public class PlayerAverages {
 
     public double getOpponentAvgFgPercentage() { return opponentAvgFgPercentage; }
     public void setOpponentAvgFgPercentage(double opponentAvgFgPercentage) { this.opponentAvgFgPercentage = opponentAvgFgPercentage; }
+
+    public double getHeightFeet() { return heightFeet; }
+    public void setHeightFeet(double heightFeet) { this.heightFeet = heightFeet; }
+
+    public double getHeightInches() { return heightInches; }
+    public void setHeightInches(double heightInches) { this.heightInches = heightInches; }
+
+    public double getWeightPounds() { return weight_pounds; }
+    public void setWeightPounds(double weight_pounds) { this.weight_pounds = weight_pounds;}
 }

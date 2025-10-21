@@ -37,7 +37,7 @@
         <tbody></tbody>
     </table>
 
-    <script>
+    <script th:inline="none">
         $(document).ready(function() {
             $.getJSON('/players', function(data) {
                 const tableData = data.map(player => [
@@ -76,5 +76,6 @@
             });
         });
     </script>
+
 </body>
 </html>

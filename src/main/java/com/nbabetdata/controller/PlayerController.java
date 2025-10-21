@@ -18,8 +18,19 @@ public class PlayerController {
     public List<PlayerAverages> getPlayers() {
         List<PlayerAverages> players = new ArrayList<>();
 
-        String query = "SELECT * FROM PlayerAverages pa " +
-                       "JOIN Players p ON pa.player_id = p.id";
+        String query = """
+                SELECT pa.*, 
+                       p.first_name, 
+                       p.last_name, 
+                       p.position, 
+                       p.height_feet, 
+                       p.height_inches, 
+                       p.weight_pounds, 
+                       t.full_name AS team_name
+                FROM PlayerAverages pa
+                JOIN Players p ON pa.player_id = p.id
+                LEFT JOIN Teams t ON p.team_id = t.id
+                """;
 
         try (Connection conn = DBConnection.getConnection();
              Statement stmt = conn.createStatement();
@@ -27,15 +38,17 @@ public class PlayerController {
 
             while (rs.next()) {
                 PlayerAverages player = new PlayerAverages();
-                player.setPlayerId(rs.getInt("id"));
-                player.setName(rs.getString("name"));
-                player.setTeam(rs.getString("team"));
-                player.setPosition(rs.getString("position"));
-                player.setHeightCm(rs.getDouble("height"));
-                player.setWeightKg(rs.getDouble("weight"));
-                player.setAge(rs.getInt("age"));
 
-                // Per-game stats
+                // Player info
+                player.setPlayerId(rs.getInt("player_id"));
+                player.setName(rs.getString("first_name") + " " + rs.getString("last_name"));
+                player.setTeam(rs.getString("team_name"));
+                player.setPosition(rs.getString("position"));
+                player.setHeightFeet(rs.getObject("height_feet") != null ? rs.getInt("height_feet") : 0);
+                player.setHeightInches(rs.getObject("height_inches") != null ? rs.getInt("height_inches") : 0);
+                player.setWeightPounds(rs.getObject("weight_pounds") != null ? rs.getInt("weight_pounds") : 0);
+
+                // Per-game averages
                 player.setAvgPoints(rs.getDouble("avg_points"));
                 player.setAvgRebounds(rs.getDouble("avg_rebounds"));
                 player.setAvgAssists(rs.getDouble("avg_assists"));
