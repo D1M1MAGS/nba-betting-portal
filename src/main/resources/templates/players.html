@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Player Stats Portal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <h1>NBA Player Stats</h1>
+    <table id="playerTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Team</th>
+                <th>Position</th>
+                <th>Height (cm)</th>
+                <th>Weight (kg)</th>
+                <th>Age</th>
+                <th>PPG</th>
+                <th>RPG</th>
+                <th>APG</th>
+                <th>SPG</th>
+                <th>BPG</th>
+                <th>TO</th>
+                <th>Minutes</th>
+                <th>2PM</th>
+                <th>2PA</th>
+                <th>3PM</th>
+                <th>3PA</th>
+                <th>Opponent PPG Allowed</th>
+                <th>Opponent 2PA Allowed</th>
+                <th>Opponent 3PA Allowed</th>
+                <th>Opponent FG%</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $.getJSON('/players', function(data) {
+                const tableData = data.map(player => [
+                    player.name,
+                    player.team,
+                    player.position,
+                    player.heightCm,
+                    player.weightKg,
+                    player.age,
+                    player.avgPoints,
+                    player.avgRebounds,
+                    player.avgAssists,
+                    player.avgSteals,
+                    player.avgBlocks,
+                    player.avgTurnovers,
+                    player.avgMinutes,
+                    player.avg2ptMade,
+                    player.avg2ptAttempt,
+                    player.avg3ptMade,
+                    player.avg3ptAttempt,
+                    player.opponentAvgPointsAllowed,
+                    player.opponentAvg2ptAllowed,
+                    player.opponentAvg3ptAllowed,
+                    player.opponentAvgFgPercentage
+                ]);
+
+                $('#playerTable').DataTable({
+                    data: tableData,
+                    paging: true,
+                    searching: true,
+                    order: [[6, "desc"]], // Sort by PPG by default
+                    columnDefs: [
+                        { targets: [3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20], className: "dt-body-right" }
+                    ]
+                });
+            });
+        });
+    </script>
+</body>
+</html>
